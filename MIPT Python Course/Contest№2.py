@@ -1,4 +1,4 @@
-import robot
+from lib import robot
 r = robot.rmap()
 r.sleep=0.5
 print('Упражнение 1.1')#1
