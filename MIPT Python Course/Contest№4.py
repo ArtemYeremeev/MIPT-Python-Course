@@ -389,4 +389,4 @@ def TY_picture():
 TY_picture()
 
 window.getMouse()
-window.close()window.close()
+window.close()
