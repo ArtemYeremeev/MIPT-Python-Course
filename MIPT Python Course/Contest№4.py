@@ -1,4 +1,4 @@
-import graphics as gr
+import lib.graphics as gr
 window = gr.GraphWin("TY_Picture", 500, 350)
 print('Задание 1')#------------------------------------------------Exercise 1
 """Code not optimized"""
