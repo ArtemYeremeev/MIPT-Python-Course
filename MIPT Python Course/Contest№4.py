@@ -1,6 +1,5 @@
 import graphics as gr
 window = gr.GraphWin("TY_Picture", 500, 350)
-
 print('Задание 1')#------------------------------------------------Exercise 1
 """Code not optimized"""
 TY_Field1 = gr.Rectangle(gr.Point(0,350), gr.Point(500,200))
@@ -390,4 +389,4 @@ def TY_picture():
 TY_picture()
 
 window.getMouse()
-window.close()
+window.close()window.close()
