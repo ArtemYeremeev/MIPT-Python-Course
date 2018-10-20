@@ -1,12 +1,13 @@
+"""MIPT Python Course. Contest1"""
+import turtle
 print('Упражнение 1. Гипотенуза')
-a=179
-b=197
-c=(a**2+b**2)**0.5
+a = 179
+b = 197
+c = (a**2+b**2)**0.5
 print(c)
 print('Выполнено')
 
 print('Упражнение 2. Буква S')
-import turtle
 turtle.shape('turtle')
 turtle.forward(50)
 turtle.left(90)
@@ -33,20 +34,20 @@ turtle.reset()
 print('Выполнено')
 
 print('Упражнение 4. Окружность')
-x=120
-while x>0:
+x = 120
+while x > 0:
     turtle.left(3)
     turtle.forward(5)
-    x-=1
+    x -= 1
 turtle.reset()
 print('Выполнено')
 
 print('Упражнение 5. Вложенные квадраты')
 turtle.left(90)
-b=10
-c=5
-a=200
-while b>0:
+b = 10
+c = 5
+a = 200
+while b > 0:
     turtle.forward(a)
     turtle.right(90)
     turtle.forward(a)
@@ -62,16 +63,16 @@ while b>0:
     turtle.forward(c)
     turtle.pendown()
     turtle.left(90)
-    a-=10
-    b-=1
+    a -= 10
+    b -= 1
 turtle.reset()
 print('Выполнено')
 
 print('Упражнение 6. Паук')
-n=12
-u=360/n
-k=n
-while k>0:
+n = 12
+u = 360/n
+k = n
+while k > 0:
     turtle.right(u)
     turtle.forward(90)
     turtle.right(90)
@@ -79,9 +80,9 @@ while k>0:
     turtle.left(90)
     turtle.forward(90)
     turtle.penup()
-    turtle.goto(0,0)
+    turtle.goto(0, 0)
     turtle.pendown()
-    k-=1
+    k -= 1
 turtle.reset()
 print('Выполнено')
 
@@ -89,38 +90,38 @@ print('Упражнение 7. Архимедова спираль')
 f = 3
 a = 1
 t = 400
-while t>=0:
+while t >= 0:
     p = (a * f) / (2 * 3.14)
     turtle.left(f)
     turtle.forward(p)
-    a=a+0.1
-    t-=1
+    a = a+0.1
+    t -= 1
 turtle.reset()
 print('Выполнено')
 
 print('Упражнение 8. Квадратная спираль')
-t=15
-a=30
-while t>=0:
+t = 15
+a = 30
+while t >= 0:
     turtle.forward(a)
     turtle.left(90)
-    a+=30
-    t-=1
+    a += 30
+    t -= 1
 turtle.reset()
 print('Выполнено')
 
 print('Упражнение 9. Правильные многоугольники')
-n=6
-f=360/n
-t=n
-c=5
-d=60
+n = 6
+f = 360/n
+t = n
+c = 5
+d = 60
 for y in range(10):
     for x in range(n):
         turtle.left(f)
         turtle.forward(d)
-        t-=1
-    d-=5
+        t -= 1
+    d -= 5
     turtle.penup()
     turtle.left(90)
     turtle.forward(5)
@@ -169,17 +170,17 @@ turtle.reset()
 print('Выполнено')
 
 print('Упражение 12. Пружина')
-n=120
-f=360/n
-t=n
-c=5
-d=5
+n = 120
+f = 360/n
+t = n
+c = 5
+d = 5
 for y in range(10):
     for x in range(n):
         turtle.left(f)
         turtle.forward(d)
-        t-=1
-    d-=0.5
+        t -= 1
+    d -= 0.5
     turtle.penup()
     turtle.left(90)
     turtle.forward(5)
@@ -210,21 +211,21 @@ turtle.forward(80)
 turtle.pendown()
 turtle.left(90)
 turtle.right(45)
-x=20
-while x>0:
+x = 20
+while x > 0:
     turtle.left(5)
     turtle.forward(3)
-    x-=1
+    x -= 1
 turtle.reset()
 print('Выполнено')
 
 print('Упражнение 14. Звезды')
-n=5
-for x in range (n):
+n = 5
+for x in range(n):
     turtle.left(720/n)
     turtle.forward(120)
 turtle.reset()
-n=11
+n = 11
 for y in range(n):
     turtle.left(720/n)
     turtle.forward(120)
