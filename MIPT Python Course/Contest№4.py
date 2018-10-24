@@ -394,5 +394,3 @@ def TY_picture1():
 
 TY_picture1()
 
-window.getMouse()
-window.close()
