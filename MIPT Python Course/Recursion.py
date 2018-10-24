@@ -1,3 +1,4 @@
+"""MIPT Python Course Lections 7-8"""
 print('Факториал')
 def f(n):
     assert n >= 0, 'Отрицательный факториал не определен'
@@ -16,6 +17,7 @@ def gcd(a, b):
         return gcd(a, b-a)
 print(gcd(7,24))
 
+
 print('Генерация всех перестановок')
 def generate_number(N: int, M: int, prefix=None):
     """Генерирует все числа в N-ричной системе счисления (N <= 10) длины M"""
@@ -27,4 +29,3 @@ for digit in range(N):
     generate_number(N, M-1, prefix)
     prefix.pop()
 generate_number(3,3)
-
