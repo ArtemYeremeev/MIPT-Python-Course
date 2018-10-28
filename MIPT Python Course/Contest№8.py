@@ -106,27 +106,90 @@ turtle.reset()
 
 print('Exercise 7. Levys Curve')
 
-import turtle
-instruction = ['l', 'f', 'r', 'f', 'l']
-
-def movement(iterations = 1, actions  = None, length = None):
-    if not actions:
-        actions = ['f']
-    if not length:
-        length = 200 / 2 ** (iterations/2)
-    for i in actions:
-        if i == 'f':
-            if iterations != 0:
-                movement(iterations - 1, instruction, length)
-            else:
-                turtle.forward(length)
-        elif i == 'l':
-            turtle.left(45)
-        elif i == 'r':
-            turtle.right(90)
-
 turtle.speed('fastest')
-movement(8, 0, 10)
+def Levys_Curve(l, n):
+    if n == 0:
+        turtle.forward(l)
+        return
+    l //= 2
+    Levys_Curve(l, n-1)
+    turtle.right(90)
+    Levys_Curve(l, n-1)
+    turtle.left(90)
+Levys_Curve(5000, 8)
 turtle.reset()
 
 print('Exercise 8. Dragons Curve')
+import turtle
+turtle.speed('fastest')
+turtle.left(135)
+def Drago_Curve(l, n,):
+
+    if n == 0:
+        turtle.forward(l)
+        return
+    l // 2
+
+    Drago_Curve(l, n - 1)
+    turtle.left(90)
+    Drago_Curve(l, n - 1)
+    turtle.left(90)
+    Drago_Curve(l, n - 1)
+    turtle.right(90)
+    Drago_Curve(l, n - 1)
+
+    turtle.left(90)
+
+    Drago_Curve(l, n - 1)
+    turtle.left(90)
+    Drago_Curve(l, n - 1)
+    turtle.right(90)
+    Drago_Curve(l, n - 1)
+    turtle.right(90)
+    Drago_Curve(l, n - 1)
+
+    turtle.left(90)
+
+    Drago_Curve(l, n - 1)
+    turtle.left(90)
+    Drago_Curve(l, n - 1)
+    turtle.left(90)
+    Drago_Curve(l, n - 1)
+    turtle.right(90)
+    Drago_Curve(l, n - 1)
+
+    turtle.right(90)
+
+    Drago_Curve(l, n - 1)
+    turtle.left(90)
+    Drago_Curve(l, n - 1)
+    turtle.left(90)
+    Drago_Curve(l, n - 1)
+    turtle.right(90)
+    Drago_Curve(l, n - 1)
+
+    turtle.left(90)
+
+    Drago_Curve(l, n - 1)
+    turtle.left(90)
+    Drago_Curve(l, n - 1)
+    turtle.left(90)
+    Drago_Curve(l, n - 1)
+    turtle.right(90)
+    Drago_Curve(l, n - 1)
+
+    turtle.left(90)
+
+    Drago_Curve(l, n - 1)
+    turtle.left(90)
+    Drago_Curve(l, n - 1)
+    turtle.left(90)
+    Drago_Curve(l, n - 1)
+    turtle.right(90)
+    Drago_Curve(l, n - 1)
+
+    turtle.left(90)
+
+
+Drago_Curve(30, 3)
+turtle.reset()
