@@ -116,7 +116,7 @@ def Levys_Curve(l, n):
     turtle.right(90)
     Levys_Curve(l, n-1)
     turtle.left(90)
-Levys_Curve(5000, 8)
+Levys_Curve(2000, 8)
 turtle.reset()
 
 print('Exercise 8. Dragons Curve')
