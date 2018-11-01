@@ -9,11 +9,13 @@ window = gr.GraphWin("Model", SIZE_X, SIZE_Y)
 coords = gr.Point(200, 200)
 velocity = gr.Point(2, 0)
 
+
 def add(point_1, point_2):
     """Функция, описывающая изменение положения шара"""
     new_point = gr.Point(point_1.x + point_2.x,
                          point_1.y + point_2.y)
     return new_point
+
 
 def clear_window():
     """Функция, очищающая поле"""
@@ -21,15 +23,26 @@ def clear_window():
     rectangle.setFill('green')
     rectangle.draw(window)
 
+
+def wall(coords, velocity):
+    """Функция, проверяющая контакт мяча со стеной"""
+    if coords.x < 15 or coords.x > SIZE_X - 15:
+        velocity.x = -velocity.x
+    if coords.y < 15 or coords.y > SIZE_Y - 15:
+        velocity.y = -velocity.y
+
+
 def draw_ball(coords):
     """Функция визуализации"""
     circle = gr.Circle(coords, 15)
     circle.setFill('yellow')
     circle.draw(window)
 
-for t in range(100):
+
+for t in range(150):
     clear_window()
     draw_ball(coords)
+    wall(coords, velocity)
     coords = add(coords, velocity)
     gr.time.sleep(0.02)
     t -= 1
@@ -44,18 +57,14 @@ coords = gr.Point(200, 200)
 velocity = gr.Point(5, 2)
 acceleration = gr.Point(0, 0.1)
 
-def wall(coords, velocity):
-    """Функция, проверяющая контакт мяча со стеной"""
-    if coords.x < 0 or coords.x > SIZE_X:
-        velocity.x = -velocity.x
-    if coords.y < 0 or coords.y > SIZE_Y:
-        velocity.y = -velocity.y
 
 def update_coords(coords, velocity):
     return add(coords, velocity)
 
+
 def update_velocity(velocity, acceleration):
     return add(velocity, acceleration)
+
 
 for t in range(300):
     clear_window()
@@ -64,8 +73,7 @@ for t in range(300):
     velocity = update_velocity(velocity, acceleration)
     wall(coords, velocity)
     gr.time.sleep(0.02)
-    t-=1
+    t -= 1
 
 window.getMouse()
 window.close()
-

@@ -120,76 +120,29 @@ Levys_Curve(2000, 8)
 turtle.reset()
 
 print('Exercise 8. Dragons Curve')
+
+print('Exercise 8. Dragons Curve')
+
 import turtle
-turtle.speed('fastest')
-turtle.left(135)
-def Drago_Curve(l, n,):
+
+def Drago_Turn(n):
+    turtle.right(45*n)
+
+def Drago_Curve(l, n):
 
     if n == 0:
         turtle.forward(l)
         return
-    l // 2
-
     Drago_Curve(l, n - 1)
-    turtle.left(90)
-    Drago_Curve(l, n - 1)
-    turtle.left(90)
-    Drago_Curve(l, n - 1)
-    turtle.right(90)
+    if n % 2 == 0:
+        turtle.right(90)
+    else:
+        turtle.left(90)
     Drago_Curve(l, n - 1)
 
-    turtle.left(90)
-
-    Drago_Curve(l, n - 1)
-    turtle.left(90)
-    Drago_Curve(l, n - 1)
-    turtle.right(90)
-    Drago_Curve(l, n - 1)
-    turtle.right(90)
-    Drago_Curve(l, n - 1)
-
-    turtle.left(90)
-
-    Drago_Curve(l, n - 1)
-    turtle.left(90)
-    Drago_Curve(l, n - 1)
-    turtle.left(90)
-    Drago_Curve(l, n - 1)
-    turtle.right(90)
-    Drago_Curve(l, n - 1)
-
-    turtle.right(90)
-
-    Drago_Curve(l, n - 1)
-    turtle.left(90)
-    Drago_Curve(l, n - 1)
-    turtle.left(90)
-    Drago_Curve(l, n - 1)
-    turtle.right(90)
-    Drago_Curve(l, n - 1)
-
-    turtle.left(90)
-
-    Drago_Curve(l, n - 1)
-    turtle.left(90)
-    Drago_Curve(l, n - 1)
-    turtle.left(90)
-    Drago_Curve(l, n - 1)
-    turtle.right(90)
-    Drago_Curve(l, n - 1)
-
-    turtle.left(90)
-
-    Drago_Curve(l, n - 1)
-    turtle.left(90)
-    Drago_Curve(l, n - 1)
-    turtle.left(90)
-    Drago_Curve(l, n - 1)
-    turtle.right(90)
-    Drago_Curve(l, n - 1)
-
-    turtle.left(90)
-
-
-Drago_Curve(30, 3)
+Drago_Turn(1)
+Drago_Curve(100, 1)
 turtle.reset()
+
+print('Exercise 9. Cantor set')
+
