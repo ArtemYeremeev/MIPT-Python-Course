@@ -563,6 +563,7 @@ print('Выполнено')
 print('Упражнение 8.18')  # 32
 r.lm('task8-18')
 pyatna = 0
+pyatna_here = 0
 shag1 = 0
 print('Иду по коридору, считаю шаги')
 while not r.wr():
@@ -574,25 +575,25 @@ if r.wr():
 r.lt(shag1)
 for w1 in range(shag1):
     if not r.wu():
+        pyatna_here = 0
         print("Найден новый коридор")
         r.up(1)
-        if r.cl():
-            pyatna += 1
-            print('Обнаружено пятно')
         while not r.wu():
-            if r.cl():
-                pyatna += 1
-                print('Обнаружено пятно')
             r.up(1)
         if r.wu():
             while not r.wd():
+                if r.cl():
+                    pyatna_here += 1
+                    pyatna += 1
+                    print('Обнаружено пятно')
                 r.dn(1)
             if r.wd():
-                if r.label():
+                if pyatna_here == 3 :
                     r.pt()
                     pyatna += 1
                     print('Обнаружено пятно')
                 r.rt(1)
+                pyatna_here = 0
     else:
         r.rt(1)
 print('Число пятен -', pyatna)
