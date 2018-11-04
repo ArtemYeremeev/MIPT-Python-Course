@@ -121,39 +121,53 @@ turtle.reset()
 
 print('Exercise 8. Dragons Curve')
 
-print('Exercise 8. Dragons Curve')
+turtle.speed('fastest')
 
-def Drago_Turn(n):
-    turtle.right(45*n)
+def curve(l, n, direction = 45):
+   if n == 0:
+       turtle.forward(l)
+       return
+   turtle.right(direction)
+   curve(l / 2, n - 1, 45)
+   turtle.left(direction * 2)
+   curve(l / 2, n - 1, - 45)
+   turtle.right(direction)
 
-def Drago_Curve(l, n):
+L = 800
+N = 5
 
-    if n == 0:
-        turtle.forward(l)
-        return
-    Drago_Curve(l, n - 1)
-    if n % 2 == 0:
-        turtle.right(90)
-    else:
-        turtle.left(90)
-    Drago_Curve(l, n - 1)
-
-Drago_Turn(1)
-Drago_Curve(100, 1)
+curve(L, N)
 turtle.reset()
 
 print('Exercise 9. Cantor set')
 
-def Cantor_Set(l, n):
+def cantor_set(x, y, l, n):
     if n == 0:
+        turtle.penup()
+        turtle.goto(x, y)
+        turtle.pendown()
+
         turtle.forward(l)
         return
-    Cantor_Set(l // 3, n - 1)
-    turtle.penup()
-    Cantor_Set(l // 3, n - 1)
-    turtle.pendown()
-    Cantor_Set(l // 3, n - 1)
 
-Cantor_Set(100, 3)
-turtle.reset()
+    turtle.penup()
+    turtle.goto(x, y)
+    turtle.pendown()
+
+    turtle.forward(l)
+
+    cantor_set(x, y-30, l/3, n-1)
+    cantor_set(x + l*2/3, y-30, l/3, n-1)
+
+L = 400
+N = 2
+X = - L / 2
+Y = 15 * N
+
+turtle.penup()
+turtle.goto(X, Y)
+turtle.pendown()
+
+cantor_set(X, Y, L, N)
+
 
