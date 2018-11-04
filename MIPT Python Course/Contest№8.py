@@ -123,8 +123,6 @@ print('Exercise 8. Dragons Curve')
 
 print('Exercise 8. Dragons Curve')
 
-import turtle
-
 def Drago_Turn(n):
     turtle.right(45*n)
 
@@ -145,4 +143,17 @@ Drago_Curve(100, 1)
 turtle.reset()
 
 print('Exercise 9. Cantor set')
+
+def Cantor_Set(l, n):
+    if n == 0:
+        turtle.forward(l)
+        return
+    Cantor_Set(l // 3, n - 1)
+    turtle.penup()
+    Cantor_Set(l // 3, n - 1)
+    turtle.pendown()
+    Cantor_Set(l // 3, n - 1)
+
+Cantor_Set(100, 3)
+turtle.reset()
 
