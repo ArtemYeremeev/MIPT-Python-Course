@@ -17,9 +17,8 @@ def gcd(a, b):
         return gcd(a, b-a)
 print(gcd(7,24))
 
-
 print('Генерация всех перестановок')
-def generate_number(N: int, M: int, prefix=None):
+def generate_number(N: int, M: int, prefix = None):
     """Генерирует все числа в N-ричной системе счисления (N <= 10) длины M"""
 prefix = prefix or []
 if M == 0:
