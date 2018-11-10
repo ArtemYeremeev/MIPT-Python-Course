@@ -17,8 +17,10 @@ def hopper(n):
     F[0] = 0
     F[1] = 1
     F[2] = 2
-    F[3] = 3
+    F[2] = 3
     for i in range(4, n + 1):
         F[n] = F[n - 1] + F[n - 2] + F[n - 3]
     return F[n]
-print(hopper(5))
+print(hopper(4))
+
+print('Exercise 2. Grasshopper 2')
