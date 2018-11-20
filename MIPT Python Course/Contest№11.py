@@ -40,18 +40,21 @@ def hopper(n):
     return F[n]
 print(hopper(4))
 
-print('Exercise 2. Grasshopper 2')
-
-
-def hopper(n):
-    """Determing grasshoppers task with 3 varieties of movement"""
-    F = [0] * (n + 1)
-    F[0] = 1
-    F[1] = F[0]
-    F[2] = (F[1] + F[0]) * 3
-    for i in range(3, n + 1):
-        F[n] = F[n - 1] + F[n - 2] + F[n - 3]
-    return F[n]
-print(hopper(4))
-
 print('Exercise 3. Grasshopper 3')
+
+
+def grasshopper(n):
+    f = [0] * (n + 1)
+    f[0] = 1
+    for i in range(1, n + 1):
+        if map[i] == 0:
+            f[i] = 0
+        else:
+            f[i] = sum(f[max(0, i - 3): i])
+
+
+print(grasshopper(5))
+
+print('Exercise 4. Queen in corner')
+
+
