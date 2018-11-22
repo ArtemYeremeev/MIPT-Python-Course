@@ -43,18 +43,41 @@ print(hopper(4))
 print('Exercise 3. Grasshopper 3')
 
 
-def grasshopper(n):
-    f = [0] * (n + 1)
-    f[0] = 1
-    for i in range(1, n + 1):
-        if map[i] == 0:
-            f[i] = 0
+def count_min_cost(N, price: list):
+    """
+    Рассчитывает минимальную стоимость достижения точки
+    N с минимальной price
+    """
+    c = [float('-inf'), price[1], price[1] + price[2]] + [0]*(N - 2)
+    for i in range(3, N + 1):
+        c[i] = price[i] + min(c[i - 1], c[i - 2])
+    return c[N]
+
+
+print(count_min_cost(5, [1, 1, 2, 2, 2, 1]))
+
+print('Exercise 4. Grasshopper 4')
+
+
+def count_min_cost(N, price: list):
+    """
+    Рассчитывает минимальную стоимость достижения точки
+    N с минимальной price и определяет оптимальную траекторию
+    """
+    path = [0] * N
+    c = [float('-inf'), price[1], price[1] + price[2]] + [0]*(N - 2)
+    for i in range(3, N + 1):
+        c[i] = price[i] + min(c[i - 1], c[i - 2])
+        if c[i - 1] < c[i - 2]:
+            path[i - 1] = price[i - 1]
         else:
-            f[i] = sum(f[max(0, i - 3): i])
+            path[i - 1] = price[i - 2]
+    print(path)
+    return c[N]
 
 
-print(grasshopper(5))
+print(count_min_cost(5, [1, 1, 2, 2, 2, 1]))
 
-print('Exercise 4. Queen in corner')
+print('Exercise 5. Queen Game')
 
 
