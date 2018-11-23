@@ -1,5 +1,5 @@
 """MIPT Python Course Contest№11"""
-
+import sys
 print('Exercise 0. Fibonachi')
 
 
@@ -80,4 +80,32 @@ print(count_min_cost(5, [1, 1, 2, 2, 2, 1]))
 
 print('Exercise 5. Queen Game')
 
+pos_string = int(input('Введите номер ряда ферзя на доске -'))
+pos_column = int(input('Введите номер столбца ферзя на доске -'))
+
+
+def queen_game_func(n, m):
+    field = [[0] * n for i in range(m)]
+    if pos_string > n or pos_column > m:
+        print('Вы поместили ферзя вне доски')
+        sys.exit()
+    queen_string = n
+    queen_column = m
+    queen = field[queen_string - 1][queen_column - 1]
+    if queen == field[pos_string][pos_column]:
+        if queen_string == pos_string or queen_column == pos_column\
+                or (queen_string == pos_string and queen_column == pos_column):
+            print('Ходящий игрок побеждает')
+    else:
+        if pos_string < queen_string and pos_column < queen_column:
+            queen_string -= 1
+            queen_column -= 1
+        if pos_string < queen_string:
+            queen_string -= 1
+        if pos_column < queen_column:
+            queen_column -= 1
+        print('Текущая позиция королевы - ', field[queen_string][queen_column])
+
+
+print(queen_game_func(5, 5))
 
