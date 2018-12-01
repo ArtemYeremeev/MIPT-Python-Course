@@ -84,6 +84,13 @@ pos_string = int(input('Введите номер ряда ферзя на до�
 pos_column = int(input('Введите номер столбца ферзя на доске -'))
 
 
+print('Exercise 5. Queen Game')
+import sys
+
+pos_string = int(input('Введите номер ряда ферзя на доске -'))
+pos_column = int(input('Введите номер столбца ферзя на доске -'))
+
+
 def queen_game_func(n, m):
     field = [[0] * n for i in range(m)]
     if pos_string > n or pos_column > m:
@@ -91,12 +98,14 @@ def queen_game_func(n, m):
         sys.exit()
     queen_string = n
     queen_column = m
-    queen = field[queen_string - 1][queen_column - 1]
+    queen = field[queen_string][queen_column]
     if queen == field[pos_string][pos_column]:
-        if queen_string == pos_string or queen_column == pos_column\
-                or (queen_string == pos_string and queen_column == pos_column):
+        print('Зашли в цикл')
+        if queen_string - 1 == pos_string or queen_column - 1 == pos_column\
+                or (queen_string - 1 == pos_string and queen_column - 1 == pos_column):
             print('Ходящий игрок побеждает')
     else:
+        print('Зашли в другой цикл')
         if pos_string < queen_string and pos_column < queen_column:
             queen_string -= 1
             queen_column -= 1
@@ -108,4 +117,5 @@ def queen_game_func(n, m):
 
 
 print(queen_game_func(5, 5))
+
 
