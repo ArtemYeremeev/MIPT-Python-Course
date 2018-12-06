@@ -48,7 +48,7 @@ ints = str(list(range(0, 11)))
 bracers = ['(', ')']
 operands = ['+', '-', '*', '/']
 x = list('(3+4*(2-1))/5')
-print(x)
+print('Выражение получено - ', x)
 for i in range(len(x)):
     if x[i] in bracers:
         pass
@@ -56,6 +56,6 @@ for i in range(len(x)):
         _stack.push(x[i])
     if x[i] in operands:
         _stack.push(x[i])
-print(_stack.output())
+print('Реверсирование выполнено - ', _stack.output())
 
 
