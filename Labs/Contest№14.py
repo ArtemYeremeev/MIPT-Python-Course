@@ -42,20 +42,37 @@ def check_bracers_sequence(bracers):
 
 check_bracers_sequence(bracers)
 
-print('Exercise 3. Reversive Polish notation')
+
+print('Exercise 3. Polish notation')
 
 ints = str(list(range(0, 11)))
-bracers = ['(', ')']
-operands = ['+', '-', '*', '/']
-x = list('(3+4*(2-1))/5')
-print('Выражение получено - ', x)
-for i in range(len(x)):
-    if x[i] in bracers:
-        pass
-    if x[i] in ints:
-        _stack.push(x[i])
-    if x[i] in operands:
-        _stack.push(x[i])
-print('Реверсирование выполнено - ', _stack.output())
+operators = ['+', '-', '*', '/']
+numeras = list(range(0, 10))
+x_reversive = list('34+21-*5/')
+x_direct = list('*+34-21/5')
+
+x = x_reversive
+print('Reversive input -', x)
+for i in range(len(x_reversive)):
+    result = x[i]
+    if x[i] in numeras:
+        int(_stack.push(x[i]))
+    if x[i] in operators:
+        num1 = int(_stack.pop())
+        num2 = int(_stack.pop())
+        if x[i] == '+':
+            result = (num1 + num2)
+        if x[i] == '-':
+            result = (num2 - num1)
+        if x[i] == '*':
+            result = (num1 * num2)
+        if x[i] == '/':
+            result = (num2 / num1)
+    _stack.push(result)
+    print(_stack.output())
+
+x = x_direct
+print('Direct input -', x)
+
 
 
