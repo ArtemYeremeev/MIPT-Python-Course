@@ -71,8 +71,32 @@ for i in range(len(x_reversive)):
     _stack.push(result)
     print(_stack.output())
 
-x = x_direct
-print('Direct input -', x)
+print('Exercise 4. Stack calculator')
 
+expression = list(input('Введите ваше мат. выражение - '))
+
+operators = ['+', '-', '*', '/']
+numeras = str(list(range(0, 10)))
+
+list1 = []
+list2 = []
+list3 = []
+
+for x in range(len(expression)):
+    if expression[x] in numeras:
+        list1.append(expression[x])
+    if expression[x] in operators:
+        list2.append(expression[x])
+
+print(list1)
+print(list2)
+
+for x in range(len(expression)):
+    if list1[x] and list1[x + 1] in numeras:
+        list3.insert(list3[1], list2[1])
+    else:
+        list3.append(list1[x])
+
+print(list3)
 
 
