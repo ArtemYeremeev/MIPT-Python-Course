@@ -92,11 +92,8 @@ print(list1)
 print(list2)
 
 for x in range(len(expression)):
-    if list1[x] and list1[x + 1] in numeras:
-        list3.insert(list3[1], list2[1])
-    else:
-        list3.append(list1[x])
-
-print(list3)
+    if list2[0] == '+':
+        if list1[x] and list1[x + 1] in numeras:
+            print(list1[x] + list1[x+1])
 
 
