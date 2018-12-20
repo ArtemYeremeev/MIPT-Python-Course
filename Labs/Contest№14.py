@@ -102,14 +102,14 @@ for x in range(len(expression)):
             number = int(list1[x]) - int(list1[x + 1])
             _stack.push(number)
             print(_stack.output())
-    if list2[0] == '*':
-        if list1[x] and list1[x + 1] in numeras:
-            number = int(list1[x]) * int(list1[x + 1])
-            _stack.push(number)
-            print(_stack.output())
     if list2[0] == '/':
         if list1[x] and list1[x + 1] in numeras:
             number = int(list1[x]) / int(list1[x + 1])
+            _stack.push(number)
+            print(_stack.output())
+    if list2[0] == '*':
+        if list1[x] and list1[x + 1] in numeras:
+            number = int(list1[x]) * int(list1[x + 1])
             _stack.push(number)
             print(_stack.output())
 
