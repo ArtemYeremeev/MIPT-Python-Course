@@ -1,4 +1,4 @@
-"""MIPT Python Course Lections 23"""
+"""MIPT Python Course Lections 17"""
 print('Граф')
 M, N = [int(x) for x in input().split()]
 V = []
@@ -13,3 +13,14 @@ for i in range(N):
         v1_i = index[v1]
         v2_i = index[v2]
 print(index)
+
+M, N = [int(x) for x in input().split()]
+G = {}
+for i in range(N):
+    v1, v2 = input().split()
+    for v, u in (v1, v2), (v2, v1):
+        if v not in G:
+            G[v] = {u}
+        else:
+            G[v].add(u)
+
