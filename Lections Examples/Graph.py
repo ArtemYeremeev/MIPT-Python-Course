@@ -1,4 +1,4 @@
-"""MIPT Python Course Lections 17"""
+"""MIPT Python Course Lections 22"""
 print('Граф')
 M, N = [int(x) for x in input().split()]
 V = []
